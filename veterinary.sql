@@ -188,3 +188,12 @@ ON a.animalid = b.animalid
 INNER JOIN owners AS c
 ON c.ownerid = c.ownerid
 WHERE c.ofirstname = 'Maria'
+
+-- feat/list-animal-w-most-appoinment
+SELECT a.animalid, a.name, COUNT(*) AS appointment_count
+FROM animals a
+JOIN appointments ap 
+	ON a.animalid = ap.animalid
+GROUP BY a.animalid, a.name
+ORDER BY appointment_count DESC
+LIMIT 1;

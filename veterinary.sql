@@ -176,3 +176,7 @@ WHERE dfirstname = 'Dr. Sofia';
 -- feat/list-species-catered
 SELECT DISTINCT species
 FROM animals;
+
+-- feat/list-total-sales
+SELECT SUM(totalamount) AS total_sales
+FROM invoices;

@@ -180,3 +180,11 @@ FROM animals;
 -- feat/list-total-sales
 SELECT SUM(totalamount) AS total_sales
 FROM invoices;
+
+-- feat/list-total-appoinment-owner-maria 
+SELECT COUNT(a.animalid) FROM appointments AS a
+INNER JOIN animals AS b
+ON a.animalid = b.animalid
+INNER JOIN owners AS c
+ON c.ownerid = c.ownerid
+WHERE c.ofirstname = 'Maria'
